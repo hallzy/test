@@ -1,4 +1,4 @@
-##Assignment 2
+#Assignment 2
 
 ##Group 21
 Kelly
@@ -83,6 +83,137 @@ Then we tested that SpriteTypeAt returned the correct Sprite Type.
 ####testTileAtOffset
 
 Made a test case to verify that the correct tile is returned given the offset.
+
+
+####Test Class for BoardTest.java
+
+```java
+package org.jpacman.test.framework.model;
+
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+
+import org.jpacman.framework.model.Board;
+import org.jpacman.framework.model.IBoardInspector;
+import org.jpacman.framework.model.Tile;
+import org.jpacman.framework.model.Ghost;
+import org.jpacman.framework.model.Food;
+import org.jpacman.framework.model.Player;
+import org.jpacman.framework.model.Wall;
+import org.jpacman.framework.model.Sprite;
+
+
+
+import org.junit.Before;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.not;
+
+public class BoardTest {
+
+  private static final int WIDTH = 10;
+  private static final int HEIGHT = 20;
+  private final Board board = new Board(WIDTH, HEIGHT);
+  private final Sprite shelby = new Ghost() { };
+  private final Sprite steven = new Food() { };
+  private final Sprite kelly = new Player() { };
+  private final Sprite evelyn = new Wall() { };
+
+
+
+  @Before
+  public void setUp() {
+
+    board.put(shelby, 5, 15);
+    board.put(kelly, 4, 9);
+
+  }
+
+  /**
+   * Test that the correct sprite is at a certain tile.
+   * Test to make sure the sprite isn't at another sprite's tile.
+   */
+  @Test
+  public void testSpriteAt() {
+
+    assertEquals(board.spriteAt(5, 15), shelby);
+    assertNotSame(board.spriteAt(4,9), shelby);
+
+  }
+
+
+
+  /**
+   * Test that sprite can be placed on a tile.
+   * Test what happens when a ghost get's placed on a wall.
+   */
+
+  @Test
+  public void testPut() {
+
+      assertEquals(board.spriteAt(4,9), kelly);
+
+      //now place a wall
+      board.put(evelyn, 4, 8);
+    assertEquals(board.spriteAt(4, 8), evelyn);
+    //now place a ghost on wall
+    board.put(shelby, 4, 8);
+    assertEquals(board.spriteAt(4, 8), shelby);
+
+      }
+
+  /**
+   * Test that an empty tile is recognized.
+   * Test that each main spriteType can be acknowledged with varying test cases.
+   *
+   */
+
+
+  @Test
+  public void testSpriteTypeAt() {
+
+    /* Sprite Types:
+    PLAYER,
+    GHOST,
+    FOOD,
+    EMPTY,
+    WALL,
+    OTHER*/
+        board.put(evelyn, 1, 2);
+        board.put(steven, 3, 4);
+
+    assertEquals(board.spriteTypeAt(3, 9), IBoardInspector.SpriteType.EMPTY);
+    assertThat(board.spriteTypeAt(5, 15), equalTo(shelby.getSpriteType()));
+    assertEquals(board.spriteTypeAt(3, 4), IBoardInspector.SpriteType.FOOD);
+    assertEquals(board.spriteTypeAt(1, 2), IBoardInspector.SpriteType.WALL);
+    assertEquals(board.spriteTypeAt(4, 9), IBoardInspector.SpriteType.PLAYER);
+    assertThat(board.spriteTypeAt(5, 15), not(equalTo(steven.getSpriteType())));
+
+
+  }
+
+
+  /**
+   * Testing what happens when you are looking for the offset of a certain tile.
+   *
+   */
+
+
+  @Test
+  public void testTileAtOffset() {
+    Tile start = board.tileAt(0, 0);
+    Tile actual = board.tileAtOffset(start, 1, 1);
+    Tile desired = board.tileAt(1, 1);
+    assertEquals(desired, actual);
+  }
+
+}
+
+```
+
 
 ##Exercise 2.5
 
