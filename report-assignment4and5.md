@@ -104,7 +104,7 @@ In spaceinvaders.js, 86% of the branches were covered (169/196) while in starfie
 Metric 3: Function Coverage
 In spaceinvaders.js, 84% of the functions were covered (39/46) while in starfield.js, 88% of the functions were covered (8/9).
 
-JSCover Results -> https://github.com/UBC-CPEN422/group21/blob/master/text-reports/jscover.png
+[JSCover Results](https://github.com/UBC-CPEN422/group21/blob/master/text-reports/jscover.png)
 
 #Assignment 5
 
