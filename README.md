@@ -4,6 +4,6 @@
 
 $2+3$
 
-\pagebreak
+\newpage
 
 this should be on a new page.
