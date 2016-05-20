@@ -1,14 +1,4 @@
-~~strike~~
+This repo is used for random things.
 
-2^2^
-
-$2+3$
-
-\newpage
-
-this should be on a new page.
-
-
-| Column 1       | Test | test2 |
-|----------------|------|-------|
-| This is a test | test | hello |
+For example, testing other projects if they interact with git in some way, or to
+upload a markdown file to convert to a git flavoured pdf with gitprint.
