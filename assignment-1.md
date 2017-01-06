@@ -1,50 +1,6 @@
 # Assignment 1
 ## Steven Hall - 12042131
 
-### Itinerary
-
-#### Travel
-* Flight from Vancouver to Oakland
-* Taxi from Oakland to Hotel
-
-
-* Flight from Oakland to Vancouver
-* Taxi from Hotel to Oakland
-
-Round Trip Flight = $390 with Alaska Airlines, layover in SEATAC
-
-* $40 to San Francisco by taxi
-* $40 from San Francisco by taxi
-
-
-$1527 for Hotel at Fairmont Heritage Place for the full week.
-
-* April 29 - Travel Day
-* April 30 - Giants Game - $70
-* May 1    - Golden Gate Bridge and Bus Tour - $45
-* May 2    - Lombard Street and Trollys - $7.00
-* May 3    - Fisherman's Warf
-* May 4    - Alcatraz - $35.50
-* May 5    - Athletics Game - $70
-* May 6    - Athletics Game - $70
-* May 7    - Travel Day
-
-
-Total: **$2294.50**
-
-
-
-### List of Risks
-
-* Indirect
-  * Weather
-  * Earthquake
-  * Plane Delays
-* Direct
-  * Get Lost
-  * Late
-
-
 
 ### Section A
 
